@@ -1,5 +1,19 @@
 # hzke
-仿杭州贝壳网项目
 
-## mock数据
-使用rap2模拟数据 http://rap2.taobao.org/
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
