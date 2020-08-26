@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import Welcome from '../views/Welcome.vue'
 Vue.use(VueRouter)
 
-  const routes = [
-  
+const routes = [
+  {
+    path: '/Welcome',
+    component: Welcome
+  }
 ]
 
 const router = new VueRouter({
