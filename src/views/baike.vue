@@ -1,5 +1,6 @@
 <template>
   <div>
+    百科
   </div>
 </template>
 
@@ -7,16 +8,16 @@
 export default {
   data () {
     return {
+
     }
   },
 
   created () {
-    this.getinit()
+
   },
 
   methods: {
-    async getinit () {
-    }
+
   }
 }
 </script>
