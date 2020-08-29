@@ -1,15 +1,18 @@
 <template>
   <div>
-    租房页面
+    <zufangHeader></zufangHeader>
   </div>
 </template>
 
 <script>
+import zufangHeader from '../components/zufang/rentHouse.vue'
 export default {
+  name: 'zufang',
   data () {
-    return {
-
-    }
+    return {}
+  },
+  components: {
+    zufangHeader
   },
 
   created () {
