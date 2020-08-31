@@ -1,10 +1,17 @@
 import Vue from 'vue'
 import {
 	Button,
-	Header,
-	Main
-} from 'element-ui'
+	Breadcrumb,
+	BreadcrumbItem,
+	Checkbox,
+	CheckboxGroup,
+	Input
+}
+	from 'element-ui'
 
 Vue.use(Button)
-Vue.use(Header)
-Vue.use(Main)
+Vue.use(Breadcrumb)
+Vue.use(BreadcrumbItem)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Input)

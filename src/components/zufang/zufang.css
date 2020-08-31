@@ -2,11 +2,16 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: HiraginoSansGB-W3, Hiragino Sans GB, Microsoft Yahei UI, Microsoft Yahei, '微软雅黑', Segoe UI, Tahoma, '宋体b8b\\4f53', SimSun, sans-serif;
 }
 html .w,
 body .w {
   width: 1150px;
   margin: 0 auto;
+}
+html a,
+body a {
+  color: #000;
 }
 #zufang-header {
   height: 36px;
@@ -17,6 +22,9 @@ header {
   line-height: 36px;
   margin: 0;
   box-shadow: 0 1px 0 0 #e4e6f0;
+}
+header .header_wrap {
+  padding: 0;
 }
 header .header_wrap li {
   float: left;
@@ -72,6 +80,7 @@ header .header_wrap .active {
   color: #3072f3;
 }
 .search_area .search_wrap {
+  position: relative;
   width: 710px;
   line-height: 46px;
   font-size: 14px;
@@ -82,19 +91,152 @@ header .header_wrap .active {
 }
 .search_area .search_wrap input {
   width: 668px;
+  height: 44px;
   outline: none;
   padding: 16px 23px 17px;
   box-sizing: border-box;
-  color: #a9a9a9;
+  color: #A9A9A9;
   border-width: 0;
   font-size: 13px;
+  font-weight: 200;
 }
 .search_area .search_wrap .search {
+  position: absolute;
   display: inline-block;
   width: 38px;
-  height: 24px;
-  padding-bottom: 3px;
-  margin: 5px 0 0 2px;
+  height: 38px;
+  margin-top: 3px;
+  margin-left: 4px;
   cursor: pointer;
   background: url(images/search.jpg) no-repeat 0 0;
+}
+.bread_nav {
+  margin-top: 25px;
+  font-size: 12px;
+}
+.bread_nav /deep/ .el-breadcrumb__inner {
+  color: #929292;
+  cursor: pointer!important;
+}
+.filter {
+  position: relative;
+  width: 1150px;
+  height: 256px;
+  padding-top: 15px;
+}
+.filter li {
+  float: left;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-right: 18px;
+}
+.filter .filter_wrap {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+}
+.filter .filter_wrap .filter_item_way {
+  flex: 1;
+  padding-left: 0;
+  font-size: 14px;
+}
+.filter .filter_wrap .filter_item_way .strong {
+  margin-right: 2px;
+  color: #3072f6 !important;
+  font-weight: 700!important;
+}
+.filter .filter_wrap .filter_item_way .rail {
+  margin-right: 2px;
+}
+.filter .filter_wrap .filter_wrap ul:hover {
+  color: #30A1F9;
+}
+.filter .area li {
+  margin-right: 24px;
+}
+.filter .rentType {
+  padding: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.filter .rentType .rail:first-child {
+  font-weight: 600;
+  color: #3072f6;
+}
+.filter .rentType li:nth-child(n+2) {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 11px;
+}
+.filter .filter_item_way span:hover {
+  color: #3072f6;
+}
+.filter .el-checkbox-group {
+  display: inline-block;
+  margin-left: 24px;
+}
+.filter .el-checkbox-group .el-checkbox {
+  margin-right: 16px;
+}
+.filter .el-checkbox-group .el-checkbox__label {
+  font-size: 12px;
+}
+.filter .rentMoney {
+  padding: 0;
+}
+.filter .rentMoney .rentMoney_b {
+  font-size: 14px;
+  font-weight: 600;
+}
+.filter .rentMoney .el-checkbox__label:hover {
+  color: #3072f6;
+}
+.filter .el-input {
+  display: inline-block;
+  width: 56px;
+  margin: 0 6px;
+}
+.filter .rentHouse {
+  margin-top: 8px;
+}
+.filter .rentDirection {
+  margin-bottom: 25px;
+}
+.filter .more a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  text-align: center;
+  font-size: 13px;
+  color: #5680A6;
+}
+.content {
+  width: 1150px;
+  height: 900px;
+  background-color: pink;
+}
+.content .content_article {
+  position: relative;
+  width: 850px;
+  margin: 30px 0 14px 0;
+  font-size: 16px;
+  color: #101d37;
+  font-weight: 700;
+}
+.content .content_article .houseNum {
+  color: #3072f6;
+}
+.content .content_article .clearIf {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.content .content_article .clearIf a {
+  color: #5680a6;
+  font-weight: 400;
+  text-decoration: underline;
 }

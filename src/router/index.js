@@ -17,7 +17,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/zufang'
+    redirect: '/index'
   },
   {
     path: '/index',
