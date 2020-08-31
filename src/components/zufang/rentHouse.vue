@@ -90,82 +90,28 @@
     <div class="filter w">
       <div class="filter_wrap">
         <!-- 复选框 ul -->
+        <!-- 点击更多 显示下边 -->
         <!-- 按区域 -->
         <ul class="filter_item_way">
           <li>
             <a href="#">
-              <span class="strong">按区域</span>
-              <i class="el-icon-arrow-down"></i>
+              <span :class="active ? 'strong' : ''" @click="areaClick">按区域</span>
+              <i :class="active ? 'el-icon-arrow-up' : 'el-icon-arrow-down'"></i>
             </a>
           </li>
           <li>
             <a href="#">
-              <span class="rail">按地铁线</span>
-              <i class="el-icon-arrow-up"></i>
+              <span :class="!active ? 'strong' : ''" @click="railClick">按地铁线</span>
+              <i :class="active ? 'el-icon-arrow-down' : 'el-icon-arrow-up'"></i>
             </a>
           </li>
         </ul>
         <!-- 不限 -->
-        <ul class="filter_item_way area">
-          <li>
-            <a href="#">
-              <span class="strong">不限</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">西湖</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">下城</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">江干</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">拱墅</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">上城</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">滨江</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">余杭</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">萧山</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">富阳</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">临安</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rail">钱塘新区</span>
-            </a>
+        <ul class="filter_item_way area buxian">
+          <li @click="clickBuxian(index)" v-for="(item, index) in data" :key="index">
+            <router-link to="/zufang">
+              <span :class="index == way ? 'strong' : ''">{{item}}</span>
+            </router-link>
           </li>
         </ul>
         <!-- 不限 隐藏区-->
@@ -203,24 +149,9 @@
         </ul>
         <!-- 方式 -->
         <ul class="area rentType">
-          <li>
+          <li @click="styleClick(index)" v-for="(item, index) in styles" :key="index">
             <a href="#">
-              <span class="strong">方式</span>
-            </a>
-          </li>
-          <li class="rentType_active">
-            <a href="#">
-              <span class="rail">不限</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>整租</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>合租</span>
+              <span :class="index == waySum ? 'strong' : ''">{{item}}</span>
             </a>
           </li>
         </ul>
@@ -264,7 +195,7 @@
           </li>
         </ul>
         <!-- 朝向 -->
-        <ul class="rentMoney rentDirection">
+        <ul class="rentMoney rentDirection hide">
           <li>
             <a href="#">
               <span class="strong rentMoney_b">朝向</span>
@@ -280,10 +211,100 @@
             </a>
           </li>
         </ul>
+        <!-- 点击收起 -->
+        <!-- 品牌 -->
+        <div :style="more ? 'display: none': 'display:block'">
+          <ul class="rentMoney clearfix">
+            <li>
+              <a href="#">
+                <span class="strong rentMoney_b">品牌</span>
+                <template>
+                  <el-checkbox-group v-model="checkList">
+                    <el-checkbox label="链家"></el-checkbox>
+                    <el-checkbox label="自如"></el-checkbox>
+                    <el-checkbox label="魔方公寓"></el-checkbox>
+                    <el-checkbox label="城家公寓"></el-checkbox>
+                    <el-checkbox label="泊寓"></el-checkbox>
+                    <el-checkbox label="初九公寓"></el-checkbox>
+                    <el-checkbox label="奥通公寓"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </a>
+            </li>
+          </ul>
+          <!-- 特色 -->
+          <ul class="rentMoney clearfix">
+            <li>
+              <a href="#">
+                <span class="strong rentMoney_b">特色</span>
+                <template>
+                  <el-checkbox-group v-model="checkList">
+                    <el-checkbox label="近地铁"></el-checkbox>
+                    <el-checkbox label="拎包入住"></el-checkbox>
+                    <el-checkbox label="精装修"></el-checkbox>
+                    <el-checkbox label="押一付一"></el-checkbox>
+                    <el-checkbox label="新上"></el-checkbox>
+                    <el-checkbox label="认证公寓"></el-checkbox>
+                    <el-checkbox label="随时看房"></el-checkbox>
+                    <el-checkbox label="VR房源"></el-checkbox>
+                    <el-checkbox label="业主自荐"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </a>
+            </li>
+          </ul>
+          <!-- 租期 -->
+          <ul class="rentMoney clearfix">
+            <li>
+              <a href="#">
+                <span class="strong rentMoney_b">租期</span>
+                <template>
+                  <el-checkbox-group v-model="checkList">
+                    <el-checkbox label="月租"></el-checkbox>
+                    <el-checkbox label="年租"></el-checkbox>
+                    <el-checkbox label="一个月起租"></el-checkbox>
+                    <el-checkbox label="1-3个月"></el-checkbox>
+                    <el-checkbox label="4-6个月"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </a>
+            </li>
+          </ul>
+          <!-- 楼层 -->
+          <ul class="rentMoney clearfix">
+            <li>
+              <a href="#">
+                <span class="strong rentMoney_b">楼层</span>
+                <template>
+                  <el-checkbox-group v-model="checkList">
+                    <el-checkbox label="低楼层"></el-checkbox>
+                    <el-checkbox label="中楼层"></el-checkbox>
+                    <el-checkbox label="高楼层"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </a>
+            </li>
+          </ul>
+          <!-- 电梯 -->
+          <ul class="rentMoney rentElevator clearfix">
+            <li>
+              <a href="#">
+                <span class="strong rentMoney_b">电梯</span>
+                <template>
+                  <el-checkbox-group v-model="checkList">
+                    <el-checkbox label="无电梯"></el-checkbox>
+                    <el-checkbox label="有电梯"></el-checkbox>
+                  </el-checkbox-group>
+                </template>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
+
       <!-- 更多 -->
       <div class="more">
-        <a href="#">
+        <a href="javascript:;" @click="moreClick">
           更多
           <i class="el-icon-arrow-down"></i>
         </a>
@@ -292,7 +313,6 @@
     <!-- 内容区域  content -->
     <div class="content w">
       <div class="content_article">
-        <!-- 搜索结果 -->
         <p>
           已为您找到
           <span class="houseNum">48507</span> 套
@@ -313,13 +333,73 @@ export default {
   name: "rentHouse",
   data() {
     return {
-      checkList: []
+      active: true,
+      checkList: [],
+      data: [
+        "不限",
+        "西湖",
+        "下城",
+        "江干",
+        "拱墅",
+        "上城",
+        "滨江",
+        "余杭",
+        "萧山",
+        "富阳",
+        "临安",
+        "钱塘新区"
+      ],
+      way: 0,
+      styles: ["方式", "不限", "整租", "合租"],
+      waySum: 1,
+      more: true
     };
   },
 
   created() {},
 
-  methods: {}
+  methods: {
+    areaClick() {
+      this.active = true;
+      this.data = [
+        "不限",
+        "西湖",
+        "下城",
+        "江干",
+        "拱墅",
+        "上城",
+        "滨江",
+        "余杭",
+        "萧山",
+        "富阳",
+        "临安",
+        "钱塘新区"
+      ];
+    },
+    railClick() {
+      this.active = false;
+      this.data = [
+        "不限",
+        "1号线(临平-湘湖)",
+        "1号线(下沙江滨-湘湖)",
+        "地铁2号线",
+        "地铁4号线",
+        "地铁5号线"
+      ];
+    },
+    clickBuxian(index) {
+      this.way = index;
+    },
+    styleClick(index) {
+      if (index == 0) {
+        return true;
+      }
+      this.waySum = index;
+    },
+    moreClick() {
+      this.more = !this.more;
+    }
+  }
 };
 </script>
 

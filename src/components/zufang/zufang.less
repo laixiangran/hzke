@@ -123,7 +123,6 @@ header .header_wrap .active {
 .filter {
 	position: relative;
 	width: 1150px;
-	height: 256px;
 	padding-top: 15px;
 	li {
 		float: left;
@@ -131,22 +130,26 @@ header .header_wrap .active {
     margin-bottom: 9px;
 		margin-right: 18px;
 	}
+	
 	.filter_wrap {
 		display: flex;
 		flex-direction: column;
 		border-bottom: 1px solid #eee;
-		
+		.gengduo {
+		}
 		.filter_item_way {
 			flex: 1;
 			padding-left: 0;
 			font-size: 14px;
+			i {
+				margin-left: 4px;
+			}
+			.buxian li{
+				margin-right: 20px;
+			}
 			.strong {
-				margin-right: 2px;
 				color: #3072f6!important;
 				font-weight: 700!important;
-			}
-			.rail {
-				margin-right: 2px;
 			}
 		}
 		.filter_wrap ul:hover {
@@ -161,7 +164,7 @@ header .header_wrap .active {
 		padding: 0;
 		font-weight: 600;
 		font-size: 14px;
-		.rail:first-child {
+		.strong {
 			font-weight: 600;
 			color: #3072f6;
 		}
@@ -205,14 +208,18 @@ header .header_wrap .active {
 		margin-top: 8px;
 	}
 	// 朝向
-	.rentDirection {
-		margin-bottom: 25px;
+	// 品牌
+	// 电梯
+	.rentElevator {
+		position: relative;
+		margin: 3px 0;
 	}
 	// 更多
 	.more a {
 		display: block;
 		width: 100px;
 		height: 30px;
+		margin-top: 10px;
 		background-color: #fff;
 		position: absolute;
 		bottom: -24px;
@@ -226,6 +233,7 @@ header .header_wrap .active {
 .content {
 	width: 1150px;
 	height: 900px;
+	margin-top: 100px;
 	background-color: pink;
 	.content_article {
 		position: relative;
@@ -248,4 +256,11 @@ header .header_wrap .active {
 			}
 		}
 	}
+}
+.clearfix::after {
+		display: block;
+		content: '';
+		clear: both;
+		height: 0;
+		visibility: hidden;
 }
