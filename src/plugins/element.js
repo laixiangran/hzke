@@ -5,7 +5,11 @@ import {
 	BreadcrumbItem,
 	Checkbox,
 	CheckboxGroup,
-	Input
+	Input,
+	TabPane,
+	Tabs,
+	Tag,
+	Pagination
 }
 	from 'element-ui'
 
@@ -15,3 +19,7 @@ Vue.use(BreadcrumbItem)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
 Vue.use(Input)
+Vue.use(TabPane)
+Vue.use(Tabs)
+Vue.use(Tag)
+Vue.use(Pagination)

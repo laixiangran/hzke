@@ -202,7 +202,7 @@ header .header_wrap .active {
 }
 .filter .rentElevator {
   position: relative;
-  margin: 3px 0;
+  margin: 3px 0 24px 0;
 }
 .filter .more a {
   display: block;
@@ -217,37 +217,240 @@ header .header_wrap .active {
   font-size: 13px;
   color: #5680A6;
 }
-.content {
-  width: 1150px;
-  height: 900px;
-  margin-top: 100px;
-  background-color: pink;
-}
-.content .content_article {
-  position: relative;
-  width: 850px;
-  margin: 30px 0 14px 0;
-  font-size: 16px;
-  color: #101d37;
-  font-weight: 700;
-}
-.content .content_article .houseNum {
-  color: #3072f6;
-}
-.content .content_article .clearIf {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.content .content_article .clearIf a {
-  color: #5680a6;
-  font-weight: 400;
-  text-decoration: underline;
-}
 .clearfix::after {
   display: block;
   content: '';
   clear: both;
   height: 0;
   visibility: hidden;
+}
+.content {
+  width: 1150px;
+  height: 1980px;
+}
+.content .el-tab-pane {
+  height: 1780px;
+}
+.content .el-tabs__nav {
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 13px;
+}
+.content .content_article {
+  position: relative;
+  width: 850px;
+  height: 800px;
+  margin: 30px 0 14px 0;
+}
+.content .content_article .content__title {
+  font-size: 16px;
+  color: #101d37;
+  font-weight: 700;
+}
+.content .content_article .content__title .houseNum {
+  margin: 0 4px;
+  color: #3072f6;
+}
+.content .content_article .content__title .clearIf {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.content .content_article .content__title a {
+  color: #5680a6;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.content .content_article .content_list {
+  display: flex;
+  position: relative;
+  height: 122px;
+  margin-top: 20px;
+}
+.content .content_article .content_list .houseImages {
+  height: 122px;
+  width: 160px;
+}
+.content .content_article .content_list .houseImages img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+.content .content_article .content_list .content_list_main {
+  position: relative;
+  width: 660px;
+  margin-left: 30px;
+}
+.content .content_article .content_list .content_list_main .itemTitle {
+  margin-top: 0;
+}
+.content .content_article .content_list .content_list_main .itemTitle a {
+  display: inline-block;
+  max-width: 450px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 700;
+  color: #101d37;
+  font-family: HiraginoSansGB-W6;
+}
+.content .content_article .content_list .content_list_main .itemDes {
+  margin-top: -10px;
+}
+.content .content_article .content_list .content_list_main .itemDes a {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #9399a5;
+  font-weight: 700;
+}
+.content .content_article .content_list .content_list_main .itemTag {
+  margin-top: -5px;
+}
+.content .content_article .content_list .content_list_main .itemTag .itemTagList {
+  display: inline-block;
+  font-style: normal;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  text-align: center;
+  color: #849aae;
+  background-color: rgba(132, 154, 174, 0.1);
+  border-radius: 2px;
+  margin-right: 6px;
+  padding: 0 11px;
+}
+.content .content_article .content_list .content_list_main .itemBrand {
+  margin-top: -5px;
+  margin-bottom: 0;
+}
+.content .content_article .content_list .content_list_main .itemBrand .brand {
+  color: #9399a5;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.content .content_article .content_list .content_list_main .itemBrand .time {
+  color: rgba(16, 29, 55, 0.3);
+  font-size: 12px;
+}
+.content .content_article .content_list .content_list_main .itemBrand .time::before {
+  margin-right: 9px;
+}
+.content .content_article .content_list .content_list_main .itemPrice {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: PingFangSC-Semibold;
+  color: #fa5741;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.content .content_article .content_list .content_list_main .itemPrice em {
+  font-size: 24px;
+  font-style: normal;
+}
+.content .content_article .content_list:nth-child(n+2) {
+  margin-top: 50px;
+}
+.content .content_aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  width: 170px;
+  height: 700px;
+  margin-top: 105px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.content .content_aside .codePic {
+  margin-bottom: 64px;
+}
+.content .content_aside .codePic .erweima {
+  width: 170px;
+}
+.content .content_aside .codePic .erweima img {
+  display: block;
+  margin: 0 auto;
+  width: 94px;
+  height: 94px;
+}
+.content .content_aside .codePic .app {
+  color: #101d37;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.content .content_aside .codePic .text {
+  width: 170px;
+  height: 56px;
+  text-align: center;
+}
+.content .content_aside .codePic .text p {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #101d37;
+}
+.content .content_aside .codePic .text .getMore a {
+  color: #9399a5;
+}
+.content .content_aside .codePic .text .getMore span {
+  margin-left: 4px;
+}
+.content .content_aside p {
+  margin: 0;
+}
+.content .content_aside .recommend_list {
+  color: #101d37;
+}
+.content .content_aside .recommend_list .houseResource {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.content .content_aside .recommend_list .recommend_item {
+  width: 170px;
+  height: 200px;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.content .content_aside .recommend_list .recommend_item a img {
+  width: 100%;
+  height: 127px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+.content .content_aside .recommend_list .recommend_item a .title {
+  margin: 0;
+  margin-top: -8px;
+  color: #101d37;
+  font-size: 13px;
+}
+.content .content_aside .recommend_list .recommend_item a .des {
+  color: #9399a5;
+  margin-top: 2px;
+}
+.content .content_aside .recommend_list .recommend_item a .price {
+  color: #fa5741;
+  margin: 4px 0 3px 0;
+  font-size: 16px;
+}
+.content /deep/ .el-pagination {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  font-weight: 400;
+}
+footer {
+  border-top: 1px solid #ccc;
+  background-color: pink;
+  font-size: 14px;
+  margin-top: 40px;
 }

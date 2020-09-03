@@ -130,13 +130,10 @@ header .header_wrap .active {
     margin-bottom: 9px;
 		margin-right: 18px;
 	}
-	
 	.filter_wrap {
 		display: flex;
 		flex-direction: column;
 		border-bottom: 1px solid #eee;
-		.gengduo {
-		}
 		.filter_item_way {
 			flex: 1;
 			padding-left: 0;
@@ -212,7 +209,7 @@ header .header_wrap .active {
 	// 电梯
 	.rentElevator {
 		position: relative;
-		margin: 3px 0;
+		margin: 3px 0 24px 0;
 	}
 	// 更多
 	.more a {
@@ -229,38 +226,259 @@ header .header_wrap .active {
 		color: #5680A6;
 	}
 }
-// 内容区域
-.content {
-	width: 1150px;
-	height: 900px;
-	margin-top: 100px;
-	background-color: pink;
-	.content_article {
-		position: relative;
-		width: 850px;
-		margin: 30px 0 14px 0;
-		font-size: 16px;
-    color: #101d37;
-		font-weight: 700;
-		.houseNum {
-			color: #3072f6;
-		}
-		.clearIf {
-			position: absolute;
-			right: 0;
-			top: 0;
-			a {
-				color: #5680a6;
-				font-weight: 400;
-				text-decoration: underline;
-			}
-		}
-	}
-}
+// 清除浮动
 .clearfix::after {
 		display: block;
 		content: '';
 		clear: both;
 		height: 0;
 		visibility: hidden;
+}
+// 内容区域
+.content {
+	width: 1150px;
+	height: 1980px;
+	.el-tab-pane {
+		height: 1780px;
+	}
+	.el-tabs__nav {
+		font-weight: 700;
+		margin-top: 15px;
+		font-size: 13px;
+	}
+	.content_article {
+		position: relative;
+		width: 850px;
+		height: 800px;
+		margin: 30px 0 14px 0;
+		// 搜索结果
+		.content__title {
+			font-size: 16px;
+			color: #101d37;
+			font-weight: 700;
+			.houseNum {
+				margin: 0 4px;
+				color: #3072f6;
+			}
+			.clearIf {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			a {
+				color: #5680a6;
+				font-weight: 400;
+				text-decoration: underline;
+			}
+		}
+		// 房源列表
+		.content_list {
+			display: flex;
+			position: relative;
+			height: 122px;
+			margin-top: 20px;
+			.houseImages {
+				height: 122px;
+				width: 160px;
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+					vertical-align: middle;
+				}
+			}
+			.content_list_main {
+				position: relative;
+				width: 660px;
+				margin-left: 30px;
+				// 房子item  标题
+				.itemTitle {
+					margin-top: 0;
+					a {
+						display: inline-block;
+						max-width: 450px;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						font-size: 20px;
+						font-weight: 700;
+						color: #101d37;
+						font-family: HiraginoSansGB-W6;
+					}
+				}
+				// 房子item 描述
+				.itemDes {
+					margin-top: -10px;
+					a {
+						margin-bottom: 16px;
+						font-size: 14px;
+						color: #9399a5;
+						font-weight: 700;
+					}
+				}
+				// 精装 随时看房标签
+				.itemTag {
+					margin-top: -5px;
+					.itemTagList {
+						display: inline-block;
+						font-style: normal;
+						height: 24px;
+						line-height: 24px;
+						font-size: 12px;
+						text-align: center;
+						color: #849aae;
+						background-color: rgba(132,154,174,.1);
+						border-radius: 2px;
+						margin-right: 6px;
+						padding: 0 11px;
+					}
+				}
+				// brand 时间维护
+				.itemBrand {
+					margin-top: -5px;
+					margin-bottom: 0;
+					.brand {
+						color: #9399a5;
+						font-size: 14px;
+						margin-right: 10px;
+					}
+					.time {
+						color: rgba(16,29,55,.3);
+						font-size: 12px;
+					}
+					.time::before {
+						margin-right: 9px;
+					}
+				}
+				.itemPrice {
+					em {
+						font-size: 24px;
+						font-style: normal;
+					}
+					position: absolute;
+					right: 0;
+					top: 0;
+					font-family: PingFangSC-Semibold;
+					color: #fa5741;
+					font-size: 14px;
+					line-height: 22px;
+					font-weight: 700;
+				}
+			}
+		}
+		.content_list:nth-child(n+2) {
+			margin-top: 50px;
+		}
+	}
+	// content_aside
+	.content_aside {
+		position: absolute;
+		top: 0;
+		right: 0;
+		float: right;
+		width: 170px;
+		height: 700px;
+    margin-top: 105px;
+    background-position: 0 0;
+		background-repeat: no-repeat;
+		// 二维码
+		.codePic {
+			margin-bottom: 64px;
+			.erweima {
+			width: 170px;
+			img {
+				display: block;
+				margin: 0 auto;
+				width: 94px;
+				height: 94px;
+				}
+			}
+			.app {
+				color: #101d37;
+				font-size: 16px;
+				font-weight: 700;
+				margin-top: 12px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.text {
+				width: 170px;
+				height: 56px;
+				text-align: center;
+				p {
+					margin: 0;
+					margin-bottom: 4px;
+					font-size: 12px;
+					color: #101d37;
+				}
+				.getMore {
+					a {
+						color: #9399a5;
+					}
+					span {
+						margin-left: 4px;
+					}
+					
+				}
+				
+			}
+		}
+		p {
+			margin: 0;
+		}
+		// 热推房源
+		.recommend_list {
+			color: #101d37;
+			.houseResource {
+				font-size: 20px;
+				line-height: 30px;
+				margin-bottom: 20px;
+				font-weight: 700;
+			}
+			.recommend_item {
+				width: 170px;
+				height: 200px;
+				font-size: 13px;
+				margin-bottom: 24px;
+				a {
+					img {
+						width: 100%;
+						height: 127px;
+						margin-bottom: 16px;
+						border-radius: 2px;
+					}
+					.title {
+						margin: 0;
+						margin-top: -8px;
+						color: #101d37;
+						font-size: 13px;
+					}
+					.des {
+						color: #9399a5;
+						margin-top: 2px;
+					}
+					.price {
+						color: #fa5741;
+						margin: 4px 0 3px 0;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+	// 分页功能
+	/deep/.el-pagination {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 0;
+		font-weight: 400;
+	}
+}
+// 底部
+footer {
+	border-top: 1px solid #ccc;
+	background-color: pink;
+	font-size: 14px;
+	margin-top: 40px;
 }

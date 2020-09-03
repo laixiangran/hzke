@@ -312,18 +312,408 @@
     </div>
     <!-- 内容区域  content -->
     <div class="content w">
+      <!-- 内容左边 -->
       <div class="content_article">
-        <p>
+        <!-- 搜索结果 -->
+        <div class="content__title">
           已为您找到
-          <span class="houseNum">48507</span> 套
-          <a href="/zufang">杭州租房</a>
-        </p>
-        <span class="clearIf">
-          <a href="#">清空条件</a>
-        </span>
+          <span class="houseNum">49082</span>套 杭州租房
+          <a href="#" class="clearIf">清空条件</a>
+        </div>
+        <!-- 综合排序 -->
+        <el-tabs v-model="activeName">
+          <el-tab-pane label="综合排序" name="first">
+            <!-- 房源列表 -->
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <div class="content_list">
+              <div class="houseImages">
+                <a href="#">
+                  <img src="./images/house.jpg" alt="整租·丁桥大唐苑 2室1厅 南_丁桥大唐苑租房" />
+                </a>
+              </div>
+              <div class="content_list_main">
+                <p class="itemTitle">
+                  <a href="#">整租·丁桥大唐苑 2室1厅 南</a>
+                </p>
+                <p class="itemDes">
+                  <a href="#">江干-丁桥-丁桥大唐苑 / 66㎡ /南 / 2室1厅1卫</a>
+                </p>
+                <p class="itemTag oneline">
+                  <i class="itemTagList">精装</i>
+                  <i class="itemTagList">随时看房</i>
+                </p>
+                <p class="itemBrand">
+                  <span class="brand">贝壳优选</span>
+                  <span class="time">
+                    <img src="./images/time.png" alt />
+                    2个月前维护
+                  </span>
+                </p>
+                <span class="itemPrice">
+                  <em>2800</em>
+                  元/月
+                </span>
+              </div>
+            </div>
+            <!-- 分页功能 -->
+              <el-pagination
+                :current-page="currentPage"
+                :page-sizes="[10, 20, 30, 40]"
+                :page-size="100"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="100">
+              </el-pagination>
+            <!-- 房源列表  等着循环遍历 -->
+          </el-tab-pane>
+          <el-tab-pane label="最新上架" name="second">最新上架</el-tab-pane>
+          <el-tab-pane label="价格" name="third">价格</el-tab-pane>
+          <el-tab-pane label="面积" name="fourth">面积</el-tab-pane>
+        </el-tabs>
+      </div>
+      <!-- 内容右边 -->
+      <div class="content_aside">
+        <div class="codePic">
+          <div class="erweima">
+            <img src="./images/getDownloadQr.png" alt />
+          </div>
+          <div class="app">下载贝壳APP</div>
+          <div class="text">
+            <p>扫描上方二维码</p>
+            <p>随时查看新房源</p>
+            <p class="getMore">
+              <a href="#">了解更多</a>
+              <span>></span>
+            </p>
+          </div>
+        </div>
+        <div class="codePic">
+          <div class="erweima">
+            <img src="./images/zixun.jpeg" alt />
+          </div>
+          <div class="app">扫描微信咨询</div>
+        </div>
+        <!-- 热推房源 -->
+        <div class="recommend_list">
+          <p class="houseResource">热推房源</p>
+          <div class="recommend_item">
+            <a href="javascript:;">
+              <img src="./images/house01.png" alt="">
+              <p class="title">整租 · 丁桥兰苑</p>
+              <p class="des">江干/2室1厅1卫</p>
+              <p class="price">3500元/月</p>
+            </a>
+          </div>
+        </div>
+        <div class="recommend_list">
+          <p class="houseResource">热推房源</p>
+          <div class="recommend_item">
+            <a href="javascript:;">
+              <img src="./images/house01.png" alt="">
+              <p class="title">整租 · 丁桥兰苑</p>
+              <p class="des">江干/2室1厅1卫</p>
+              <p class="price">3500元/月</p>
+            </a>
+          </div>
+        </div>
+        <div class="recommend_list">
+          <p class="houseResource">热推房源</p>
+          <div class="recommend_item">
+            <a href="javascript:;">
+              <img src="./images/house01.png" alt="">
+              <p class="title">整租 · 丁桥兰苑</p>
+              <p class="des">江干/2室1厅1卫</p>
+              <p class="price">3500元/月</p>
+            </a>
+          </div>
+        </div>
+        <div class="recommend_list">
+          <p class="houseResource">热推房源</p>
+          <div class="recommend_item">
+            <a href="javascript:;">
+              <img src="./images/house01.png" alt="">
+              <p class="title">整租 · 丁桥兰苑</p>
+              <p class="des">江干/2室1厅1卫</p>
+              <p class="price">3500元/月</p>
+            </a>
+          </div>
+        </div>
+        <!-- 热推房源  等着遍历 -->
       </div>
     </div>
     <!-- 内容区域  end -->
+    <!-- 底部 -->
+    <footer class="w">
+      123
+    </footer>
   </div>
 </template>
 
@@ -352,7 +742,11 @@ export default {
       way: 0,
       styles: ["方式", "不限", "整租", "合租"],
       waySum: 1,
-      more: true
+      more: true,
+      activeName: "first",
+      // 分页功能
+      currentPage: 10,
+      total: 4
     };
   },
 
