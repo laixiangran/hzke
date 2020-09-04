@@ -3,40 +3,12 @@
     <!-- 头部区域 -->
     <div id="zufang-header">
       <header>
-        <ul class="header_wrap w">
+        <ul class="header_wrap w" v-for="(item, index) in headerList" :key="index">
           <li>
-            <a href="javascript:;">首页</a>
+            <a href="javascript:;">{{item}}</a>
           </li>
-          <li>
-            <a href="javascript:;">二手房</a>
-          </li>
-          <li>
-            <a href="javascript:;">新房</a>
-          </li>
-          <li>
-            <a class="active" href="javascript:;">租房</a>
-          </li>
-          <li>
-            <a href="javascript:;">海外</a>
-          </li>
-          <li>
-            <a href="javascript:;">小区</a>
-          </li>
-          <li>
-            <a href="javascript:;">百科</a>
-          </li>
-          <li>
-            <a href="javascript:;">房价</a>
-          </li>
-          <li>
-            <a href="javascript:;">发布房源</a>
-          </li>
-          <li>
-            <a href="javascript:;">下载APP</a>
-          </li>
-          <li>
-            <a href="javascript:;">贝壳开放平台</a>
-          </li>
+        </ul>
+        <ul class="header_wrap">
           <li class="last_li">
             <img src="./images/user_icon.png" alt />
             <span>
@@ -711,8 +683,29 @@
     </div>
     <!-- 内容区域  end -->
     <!-- 底部 -->
-    <footer class="w">
-      123
+    <footer>
+      <div class="footer_main w">
+        <h3>网站地图</h3>
+        <div class="footer_middle">
+          <ul class="fatherList">
+            <li><a @click="showCur" :class="curIndex ? 'cur' : ''" href="javascript:;">热门商圈</a></li>
+            <li><a @click="showCur" :class="!curIndex ? 'cur' : ''" href="javascript:;">推荐小区</a></li>
+            <li><a @click="showCur" href="javascript:;">租房城市</a></li>
+          </ul>
+          <ul showIndex="1" class="sonList" >
+            <li><a v-for="(item,index) in childList" :key="index" href="javascript:;">{{item}}</a></li>
+          </ul>
+          <!-- <ul style="display: none;" showIndex="1" class="sonList" v-for="(item,index) in childList" :key="index">
+            <li><a href="javascript:;">{{item}}</a></li>
+          </ul>
+          <ul style="display: none;" showIndex="2" class="sonList" v-for="(item,index) in childList" :key="index">
+            <li><a href="javascript:;">{{item}}</a></li>
+          </ul> -->
+        </div>
+        <div class="footer_bottom">
+          <a href="#">天津小屋信息科技有限公司 | 津ICP备18000836号 | © Copyright © 2020 ke.com版权所有</a>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -723,6 +716,7 @@ export default {
   name: "rentHouse",
   data() {
     return {
+      headerList: ['首页','二手房','新房','租房','海外','小区','百科','房价','发布房源','载APP','贝壳开放平台'],
       active: true,
       checkList: [],
       data: [
@@ -746,15 +740,18 @@ export default {
       activeName: "first",
       // 分页功能
       currentPage: 10,
-      total: 4
-    };
+      total: 4,
+      curIndex: true,
+      childList: ['长庆租房', '南星租房', '复兴租房', '仁和租房', '文一西路租房', '清泰租房', '西兴租房', '义桥租房', '建德租房', '九堡租房', '万达广场租房', '黄龙租房', '古荡租房', '和睦租房', '西溪租房', '拱宸桥租房', '翡翠城租房', '武林租房', '天水租房', '大江东租房', '彩虹城租房', '华家池租房','申花租房', '丝绸城租房' ,'湖滨租房' ,'笕桥租房', '半山租房', '浦沿租房', '三塘租房', '长河租房' ,'三墩租房', '勾庄租房', '沿江北租房' ,'古荡租房', '火车东站租房' ,'义桥租房', '雄镇楼租房' ,'丁桥租房', '近江租房', '良渚租房', '德胜东租房', '长河租房' ,'富阳租房', '大关租房', '和平租房', '学军租房', '临浦租房', '桐庐租房', '闸弄口租房' ,'嘉绿租房' ,'清泰租房', '景芳租房', '大江东租房', '三塘租房', '文一西路租房', '闲林租房', '沿江南租房', '复兴租房', '金沙湖租房', '留下租房'],
+      showIndex: [0, 1, 2]
+    }
   },
 
   created() {},
 
   methods: {
     areaClick() {
-      this.active = true;
+      this.active = true
       this.data = [
         "不限",
         "西湖",
@@ -768,7 +765,7 @@ export default {
         "富阳",
         "临安",
         "钱塘新区"
-      ];
+      ]
     },
     railClick() {
       this.active = false;
@@ -779,22 +776,30 @@ export default {
         "地铁2号线",
         "地铁4号线",
         "地铁5号线"
-      ];
+      ]
     },
     clickBuxian(index) {
-      this.way = index;
+      this.way = index
     },
     styleClick(index) {
       if (index == 0) {
-        return true;
+        return true
       }
-      this.waySum = index;
+      this.waySum = index
     },
     moreClick() {
-      this.more = !this.more;
+      this.more = !this.more
+    },
+    showCur () {
+      this.curIndex = true
+    },
+    show () {
+      this.showIndex.forEach(item => {
+        
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped lang='less'>

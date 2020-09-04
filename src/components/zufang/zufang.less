@@ -20,6 +20,9 @@ header {
 	line-height: 36px;
 	margin: 0;
 	box-shadow: 0 1px 0 0 #e4e6f0;
+	.header_login {
+		margin-right: 40px;
+	}
 	.header_wrap {
 		padding: 0;
 	}
@@ -40,6 +43,7 @@ header .header_wrap .active {
 }
 .header_wrap .last_li {
 		float: right;
+		margin-right: 180px;
 		img {
 			vertical-align: middle;
 			margin-right: 6px;
@@ -236,8 +240,9 @@ header .header_wrap .active {
 }
 // 内容区域
 .content {
+	position: relative;
 	width: 1150px;
-	height: 1980px;
+	// height: 1980px;
 	.el-tab-pane {
 		height: 1780px;
 	}
@@ -247,9 +252,7 @@ header .header_wrap .active {
 		font-size: 13px;
 	}
 	.content_article {
-		position: relative;
 		width: 850px;
-		height: 800px;
 		margin: 30px 0 14px 0;
 		// 搜索结果
 		.content__title {
@@ -377,7 +380,6 @@ header .header_wrap .active {
 		right: 0;
 		float: right;
 		width: 170px;
-		height: 700px;
     margin-top: 105px;
     background-position: 0 0;
 		background-repeat: no-repeat;
@@ -478,7 +480,46 @@ header .header_wrap .active {
 // 底部
 footer {
 	border-top: 1px solid #ccc;
-	background-color: pink;
 	font-size: 14px;
 	margin-top: 40px;
+	.footer_main {
+		border-top: 1px solid #e4e6f0;
+		padding: 30px 0 80px;
+		h3 {
+			margin-bottom: 25px;
+		}
+		.footer_middle {
+			.fatherList {
+				padding-left: 0;
+				li {
+					display: inline-block;
+					margin-right: 24px;
+					margin-bottom: 18px;
+					color: #707787;
+					.cur {
+						color: blue;
+					}
+				}
+			}
+			.sonList {
+				padding-left: 0;
+				li {
+					float: left;
+					
+					a {
+						color: #b7bbc3;
+						margin-right: 22px;
+						margin-bottom: 2px;
+					}
+				}
+			}
+		}
+		.footer_bottom {
+			margin-top: 115px;
+			a {
+				color: #b7bbc3;
+			}
+		}
+	}
+	
 }
