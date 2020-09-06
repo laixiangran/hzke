@@ -521,5 +521,30 @@ footer {
 			}
 		}
 	}
-	
+}
+ 
+.el-carousel__container {
+	height: 0;
+}
+.carousel {
+	.el-carousel__item {
+		height: 20px;
+	}
+	.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 20px;
+    margin: 0;
+  }
+  .el-carousel__button {
+		display: none;
+	}
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
 }

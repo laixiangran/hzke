@@ -9,7 +9,9 @@ import {
 	TabPane,
 	Tabs,
 	Tag,
-	Pagination
+	Pagination,
+	Carousel,
+	CarouselItem
 }
 	from 'element-ui'
 
@@ -23,3 +25,5 @@ Vue.use(TabPane)
 Vue.use(Tabs)
 Vue.use(Tag)
 Vue.use(Pagination)
+Vue.use(Carousel)
+Vue.use(CarouselItem)

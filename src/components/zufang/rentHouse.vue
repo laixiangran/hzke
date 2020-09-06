@@ -688,25 +688,34 @@
         <h3>网站地图</h3>
         <div class="footer_middle">
           <ul class="fatherList">
-            <li><a @click="showCur" :class="curIndex ? 'cur' : ''" href="javascript:;">热门商圈</a></li>
-            <li><a @click="showCur" :class="!curIndex ? 'cur' : ''" href="javascript:;">推荐小区</a></li>
-            <li><a @click="showCur" href="javascript:;">租房城市</a></li>
+            <li><a curIndex="0" href="javascript:;">热门商圈</a></li>
+            <li><a curIndex="1" href="javascript:;">推荐小区</a></li>
+            <li><a curIndex="2" href="javascript:;">租房城市</a></li>
           </ul>
-          <ul showIndex="1" class="sonList" >
+          <ul v-if="curIndex='0'" class="sonList" >
             <li><a v-for="(item,index) in childList" :key="index" href="javascript:;">{{item}}</a></li>
           </ul>
-          <!-- <ul style="display: none;" showIndex="1" class="sonList" v-for="(item,index) in childList" :key="index">
+          <ul v-else-if="curIndex='1'" class="sonList" v-for="(item,index) in childList" :key="index">
             <li><a href="javascript:;">{{item}}</a></li>
           </ul>
-          <ul style="display: none;" showIndex="2" class="sonList" v-for="(item,index) in childList" :key="index">
+          <ul v-else class="sonList" v-for="(item,index) in childList" :key="index">
             <li><a href="javascript:;">{{item}}</a></li>
-          </ul> -->
+          </ul>
         </div>
         <div class="footer_bottom">
           <a href="#">天津小屋信息科技有限公司 | 津ICP备18000836号 | © Copyright © 2020 ke.com版权所有</a>
         </div>
       </div>
     </footer>
+    <div class="carousel w">
+      <el-carousel direction="vertical" indicator-position="outside" :interval="2000">
+        <el-carousel-item v-for="item in 3" :key="item">
+          <h3 class="medium">{{ item }}
+            123
+          </h3>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
   </div>
 </template>
 
@@ -741,9 +750,9 @@ export default {
       // 分页功能
       currentPage: 10,
       total: 4,
-      curIndex: true,
+      curIndex: '',
       childList: ['长庆租房', '南星租房', '复兴租房', '仁和租房', '文一西路租房', '清泰租房', '西兴租房', '义桥租房', '建德租房', '九堡租房', '万达广场租房', '黄龙租房', '古荡租房', '和睦租房', '西溪租房', '拱宸桥租房', '翡翠城租房', '武林租房', '天水租房', '大江东租房', '彩虹城租房', '华家池租房','申花租房', '丝绸城租房' ,'湖滨租房' ,'笕桥租房', '半山租房', '浦沿租房', '三塘租房', '长河租房' ,'三墩租房', '勾庄租房', '沿江北租房' ,'古荡租房', '火车东站租房' ,'义桥租房', '雄镇楼租房' ,'丁桥租房', '近江租房', '良渚租房', '德胜东租房', '长河租房' ,'富阳租房', '大关租房', '和平租房', '学军租房', '临浦租房', '桐庐租房', '闸弄口租房' ,'嘉绿租房' ,'清泰租房', '景芳租房', '大江东租房', '三塘租房', '文一西路租房', '闲林租房', '沿江南租房', '复兴租房', '金沙湖租房', '留下租房'],
-      showIndex: [0, 1, 2]
+      interval: ''
     }
   },
 
@@ -789,14 +798,6 @@ export default {
     },
     moreClick() {
       this.more = !this.more
-    },
-    showCur () {
-      this.curIndex = true
-    },
-    show () {
-      this.showIndex.forEach(item => {
-        
-      })
     }
   }
 }
