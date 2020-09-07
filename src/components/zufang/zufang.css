@@ -23,6 +23,9 @@ header {
   margin: 0;
   box-shadow: 0 1px 0 0 #e4e6f0;
 }
+header .active {
+  color: #fff !important;
+}
 header .header_login {
   margin-right: 40px;
 }
@@ -461,10 +464,14 @@ footer .footer_main {
 footer .footer_main h3 {
   margin-bottom: 25px;
 }
+footer .footer_main .footer_middle {
+  display: flex;
+}
 footer .footer_main .footer_middle .fatherList {
   padding-left: 0;
 }
 footer .footer_main .footer_middle .fatherList li {
+  float: left;
   display: inline-block;
   margin-right: 24px;
   margin-bottom: 18px;
@@ -474,18 +481,8 @@ footer .footer_main .footer_middle .fatherList li .cur {
   color: blue;
 }
 footer .footer_main .footer_middle .sonList {
+  display: flex;
   padding-left: 0;
-}
-footer .footer_main .footer_middle .sonList li {
-  float: left;
-}
-footer .footer_main .footer_middle .sonList li a {
-  color: #b7bbc3;
-  margin-right: 22px;
-  margin-bottom: 2px;
-}
-footer .footer_main .footer_bottom {
-  margin-top: 115px;
 }
 footer .footer_main .footer_bottom a {
   color: #b7bbc3;

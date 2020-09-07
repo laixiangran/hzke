@@ -16,6 +16,9 @@ html, body {
 	background-color: #303035;
 }
 header {
+	.active {
+		color: #fff!important;
+	}
 	height: 36px;
 	line-height: 36px;
 	margin: 0;
@@ -489,9 +492,11 @@ footer {
 			margin-bottom: 25px;
 		}
 		.footer_middle {
+			display: flex;
 			.fatherList {
 				padding-left: 0;
 				li {
+					float: left;
 					display: inline-block;
 					margin-right: 24px;
 					margin-bottom: 18px;
@@ -502,20 +507,11 @@ footer {
 				}
 			}
 			.sonList {
+				display: flex;
 				padding-left: 0;
-				li {
-					float: left;
-					
-					a {
-						color: #b7bbc3;
-						margin-right: 22px;
-						margin-bottom: 2px;
-					}
-				}
 			}
 		}
 		.footer_bottom {
-			margin-top: 115px;
 			a {
 				color: #b7bbc3;
 			}

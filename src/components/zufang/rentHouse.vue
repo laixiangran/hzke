@@ -5,7 +5,7 @@
       <header>
         <ul class="header_wrap w" v-for="(item, index) in headerList" :key="index">
           <li>
-            <a href="javascript:;">{{item}}</a>
+            <a @click="highLight(index)" :class="activeIndex === index ? 'active' : '' " href="javascript:;">{{item}}</a>
           </li>
         </ul>
         <ul class="header_wrap">
@@ -687,26 +687,23 @@
       <div class="footer_main w">
         <h3>网站地图</h3>
         <div class="footer_middle">
-          <ul class="fatherList">
-            <li><a curIndex="0" href="javascript:;">热门商圈</a></li>
-            <li><a curIndex="1" href="javascript:;">推荐小区</a></li>
-            <li><a curIndex="2" href="javascript:;">租房城市</a></li>
-          </ul>
-          <ul v-if="curIndex='0'" class="sonList" >
-            <li><a v-for="(item,index) in childList" :key="index" href="javascript:;">{{item}}</a></li>
-          </ul>
-          <ul v-else-if="curIndex='1'" class="sonList" v-for="(item,index) in childList" :key="index">
-            <li><a href="javascript:;">{{item}}</a></li>
-          </ul>
-          <ul v-else class="sonList" v-for="(item,index) in childList" :key="index">
-            <li><a href="javascript:;">{{item}}</a></li>
+          <!-- 切换 -->
+          <ul class="fatherList" @click="footerMap(index)" v-for="(item, index) in fatherList" :key="index">
+            <li><a :class="index == remen ? 'cur' : ''" href="javascript:;">{{item}}</a></li>
           </ul>
         </div>
         <div class="footer_bottom">
+          <!-- 内容 -->
+          <div class="sonList">
+            <hotShopping v-if="isShow==0"></hotShopping>
+            <commendPlots v-else-if="isShow==1"></commendPlots>
+            <rentCity v-else />
+          </div>
           <a href="#">天津小屋信息科技有限公司 | 津ICP备18000836号 | © Copyright © 2020 ke.com版权所有</a>
         </div>
       </div>
     </footer>
+    
     <div class="carousel w">
       <el-carousel direction="vertical" indicator-position="outside" :interval="2000">
         <el-carousel-item v-for="item in 3" :key="item">
@@ -720,11 +717,15 @@
 </template>
 
 <script>
-import "./zufang.css";
+import hotShopping from './component/hotShoping'
+import commendPlots from './component/commendPlots'
+import rentCity from './component/rentCity'
 export default {
   name: "rentHouse",
   data() {
     return {
+      isShow: 0,
+      activeIndex: 3,
       headerList: ['首页','二手房','新房','租房','海外','小区','百科','房价','发布房源','载APP','贝壳开放平台'],
       active: true,
       checkList: [],
@@ -751,14 +752,22 @@ export default {
       currentPage: 10,
       total: 4,
       curIndex: '',
-      childList: ['长庆租房', '南星租房', '复兴租房', '仁和租房', '文一西路租房', '清泰租房', '西兴租房', '义桥租房', '建德租房', '九堡租房', '万达广场租房', '黄龙租房', '古荡租房', '和睦租房', '西溪租房', '拱宸桥租房', '翡翠城租房', '武林租房', '天水租房', '大江东租房', '彩虹城租房', '华家池租房','申花租房', '丝绸城租房' ,'湖滨租房' ,'笕桥租房', '半山租房', '浦沿租房', '三塘租房', '长河租房' ,'三墩租房', '勾庄租房', '沿江北租房' ,'古荡租房', '火车东站租房' ,'义桥租房', '雄镇楼租房' ,'丁桥租房', '近江租房', '良渚租房', '德胜东租房', '长河租房' ,'富阳租房', '大关租房', '和平租房', '学军租房', '临浦租房', '桐庐租房', '闸弄口租房' ,'嘉绿租房' ,'清泰租房', '景芳租房', '大江东租房', '三塘租房', '文一西路租房', '闲林租房', '沿江南租房', '复兴租房', '金沙湖租房', '留下租房'],
+      fatherList: ['热门商圈', '推荐小区', '租房城市'],
+      remen: 1,
       interval: ''
     }
   },
-
+    components: {
+      hotShopping,
+      commendPlots,
+      rentCity,
+    },
   created() {},
 
   methods: {
+    highLight (index) {
+      this.activeIndex = index
+    },
     areaClick() {
       this.active = true
       this.data = [
@@ -798,10 +807,16 @@ export default {
     },
     moreClick() {
       this.more = !this.more
+    },
+    footerMap (index) {
+      this.remen = index
+      this.isShow = index
     }
   }
 }
 </script>
 
 <style scoped lang='less'>
+@import "./zufang.css";
+
 </style>
